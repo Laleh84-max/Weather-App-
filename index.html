@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather APP</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="form-group">
+    <div id="search-form">
       <form>
-        <input type="text" value="Enter a city" required minlength="3" />
+        <input
+          type="text"
+          value="Enter a city"
+          required
+          minlength="3"
+          autocomplete="off"
+          autofocus="on"
+          id="search-value-input"
+        />
         <input type="submit" value="search" />
       </form>
     </div>
