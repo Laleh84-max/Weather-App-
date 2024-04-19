@@ -1,15 +1,9 @@
-function displayUsername(response) {
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `Hey ${response.data.username}`;
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = Math.round(response.data.temperature.current);
+  temperatureElement.innerHTML = temperature;
 }
-
-let apiUrl = "https://jsonplaceholder.typicode.com/users/1";
-axios.get(apiUrl).then(displayUsername);
-
-function search(event) {
-  event.preventDefault();
-  let searchInput = documet.querySelector("#search-value-input");
-}
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+let city = "Sydney";
+let apiKey = "0adcb4fbfo8d4aa6a3f1c1c5t607f7eb";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+axios.get(apiUrl).then(displayTemperature);
